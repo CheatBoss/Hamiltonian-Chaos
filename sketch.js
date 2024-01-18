@@ -2,24 +2,24 @@
 function setup() {
 
     createCanvas(windowWidth, windowHeight);
-	
+
     colorMode(HSB, 360, 100, 100);
     noSmooth();
     noStroke();
-	
-	const half_width = width / 2;
+
+    const half_width = width / 2;
     const half_height = height / 2;
 
     background(0);
 
     const phi = (1 + Math.sqrt(random(0, 100))) / random(0, 10); // orig: (1 + Math.sqrt(5) / 2;
-	
-	// coupling constant
+
+    // coupling constant
     const K = 1 - phi;
-	
-	// periodicity constant
+
+    // periodicity constant
     const q = random(0, 100); // orig: 4
-	
+
     const v_alpha = (random(0, 100) * Math.PI) / q; // orig: (2 * Math.PI) / q;
 
     const outer_iterations = random(10, 1000);
