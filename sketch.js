@@ -157,9 +157,9 @@ function saveHash() {
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
-    halfWidth = width / 2;
-    halfHeight = height / 2;
-    gui.width = width / 3;
+    halfWidth = windowWidth / 2;
+    halfHeight = windowHeight / 2;
+    gui.width = windowWidth / 3;
     drawChaos();
 }
 
@@ -193,10 +193,11 @@ function setup() {
 		simulationSettings = JSON.parse(localStorage.getItem('hash'));
 		updateHash();
 	}
-
-    createCanvas(windowWidth, windowHeight);
-    halfWidth = width / 2;
-    halfHeight = height / 2;
+	
+	createCanvas(windowWidth, windowHeight).elt.getContext('2d', { willReadFrequently: true });
+	pixelDensity(1)
+    halfWidth = windowWidth / 2;
+    halfHeight = windowHeight / 2;
 
     colorMode(HSB, 360, 100, 100);
     noSmooth();
